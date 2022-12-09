@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
                 readytext.contains("twitter.com") -> readytext = readytext.replace("twitter.com", "c.vxtwitter.com")
             }
             val sendIntent: Intent = Intent().apply {
+                setPackage("org.telegram.messenger.web")
                 type = "text/plain"
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_TEXT, readytext)
